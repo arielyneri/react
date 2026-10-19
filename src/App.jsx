@@ -1,21 +1,27 @@
 import { Header } from './components/Header'
 import './App.css'
 import Home from './pages/home'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
+import Contact from './pages/Contact'
 
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header
         brand='Geração Tech'
         description='Sede Bezerra'>
-        <a href="#equipe">Equipe</a>
-        <a href="#aprendizado">Aprendizado</a>
+        <a href="/#equipe">Equipe</a>
+        <NavLink to="/contato">Contato</NavLink>
       </Header>
       <main className='container'>
-        <Home/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='*' element={<Home/>}/>
+          <Route path='Contato' element={<Contact/>}/>
+        </Routes>
       </main>
-    </>
+    </BrowserRouter>
   )
 }
 
