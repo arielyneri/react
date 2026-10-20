@@ -27,4 +27,4 @@ const UserCard = ({
     );
 }
 
-export default UserCards;
+export default UserCard;
